@@ -22,7 +22,7 @@ select SQL_CALC_FOUND_ROWS a.location, a.position, a.company, a.id,
 </p>
 <?Code?>
         $jobs->setModel('Job',array('location','position','company'))
-            ->addCondition('created_dts>',date('Y-m-d H:i:s',strtotime('-30 days')))
+            ->addCondition('created_dts','>',date('Y-m-d H:i:s',strtotime('-30 days')))
             ->debug();
 <?/?>
 <p>As you can see from debug information, Model/ORM automatically takes care of table aliases. Another thing you have probably noticed, is that not all the columns are being queried. That's because we explicitly defined which columns we want in the grid so the query is optimized to show only those columns. Columns defined as system(true) are always queried and are hidden by default.
