@@ -139,7 +139,7 @@ class page_jobs extends Page {
 <?/?>
 <p>You will also need to add a bit of PHP code to make this work with a model. Add this function to page/jobs.php</p>
 <?Code?>
-    function page_details(){
+    function page_company(){
         $v=$this->add('View',null,null,array('view/job_details'));
         $m=$v->setModel('Job')->loadData($_GET['id']);
         $v->template->del('has_logo');
